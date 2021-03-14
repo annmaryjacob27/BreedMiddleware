@@ -11,7 +11,7 @@ class LongestBreeds(APIView):
     """
     def get(self, request):
         """
-        http://<domain>/api/breeds/?breed_group=Toy api calls comes here
+        http://<domain>/api/longest-lifespan-breed/?breed_group=Terrier api calls comes here
         this functions takes the breed_group from the query and get the list of breeds
         of same breed group. then finds the breed with longest life span.
         then with the image id of the longest lifespan breed, gets the image url and
