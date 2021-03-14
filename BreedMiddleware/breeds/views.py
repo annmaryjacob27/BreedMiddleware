@@ -22,16 +22,12 @@ class LongestBreeds(APIView):
             breed_group = request.GET.get('breed_group', False)
             if breed_group:
                 all_breeds = self.get_breed_group(breed_group)
-                print(all_breeds)
                 if all_breeds:
                     longest_lifespan = self.get_longest_lifespan_breed(all_breeds)
-                    print
-                    print(longest_lifespan)
                     if longest_lifespan:
                         breed_image = self.get_breed_image(longest_lifespan)
-                        print
-                        print(breed_image)
-                        # this data dict will prepare if there is no data in breed_image, respective fileds will be empty in the dict
+                        # this data dict will prepare if there is no data in breed_image, respective fileds will be empty 
+                        # in the dict
                         data = {
                             'name': longest_lifespan.get('name', ''),
                             'bred_for': longest_lifespan.get('bred_for', ''),
@@ -87,8 +83,9 @@ class LongestBreeds(APIView):
         """
         filtered_breeds = self.get_filter_breeds(all_breeds)
         if filtered_breeds:
-            sorted_breeds = sorted(filtered_breeds, key=lambda k: sum([int(i) for i in k['life_span'].split() if i.isdigit()])/len([int(i) for i in k['life_span'].split() if i.isdigit()]), reverse=True)
-        # print(sorted_breeds)
+            sorted_breeds = sorted(filtered_breeds, 
+            key=lambda k: sum([int(i) for i in k['life_span'].split() if i.isdigit()])/len([int(i) 
+            for i in k['life_span'].split() if i.isdigit()]), reverse=True)
         if sorted_breeds:
             return sorted_breeds[0]
         return {}
