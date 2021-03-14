@@ -52,7 +52,7 @@ class LongestBreeds(APIView):
             else:
                 data = {
                     'status': "error",
-                    'message': "Invalid query parameter. Please check the format:http://<domain>/api/breeds/?breed_group=Toy"
+                    'message': "Invalid query parameter. Please check the format:http://<domain>/api/longest-lifespan-breed/?breed_group=Toy"
                 }
         except Exception as e:
             print(e)
