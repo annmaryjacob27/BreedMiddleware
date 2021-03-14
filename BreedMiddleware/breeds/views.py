@@ -7,7 +7,7 @@ from asgiref.sync import async_to_sync
 
 class LongestBreeds(APIView):
     """
-    Breeds : breed middleware
+    LongestBreeds
     """
     def get(self, request):
         """
